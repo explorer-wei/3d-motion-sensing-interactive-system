@@ -1,0 +1,42 @@
+﻿Build started 2012-06-19 PM 02:45:44.
+     1>Project "D:\课程\大四下\毕设\Project\04. 3D+场景\3DprojectS_2008.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Creating "Release\3DprojectS.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         All outputs are up-to-date.
+         D:\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /IDXUT\Core /IDXUT\Optional /Zi /nologo /W4 /WX- /O2 /Ob1 /Oy /D WIN32 /D NDEBUG /D _WINDOWS /D _VC80_UPGRADE=0x0710 /D _UNICODE /D UNICODE /GF /Gm- /MT /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /openmp /Yu"dxut.h" /Fp"Release\3DprojectS.pch" /Fo"Release\\" /Fd"Release\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt 3DprojectS.cpp
+         3DprojectS.cpp
+     1>d:\课程\大四下\毕设\project\04. 3d+场景\head\Mesh.h(297): warning C4305: '=' : truncation from 'double' to 'float'
+     1>d:\课程\大四下\毕设\project\04. 3d+场景\head\info.h(40): warning C4238: nonstandard extension used : class rvalue used as lvalue
+     1>d:\课程\大四下\毕设\project\04. 3d+场景\head\info.h(45): warning C4238: nonstandard extension used : class rvalue used as lvalue
+     1>d:\课程\大四下\毕设\project\04. 3d+场景\head\info.h(32): warning C4189: 'wndHeight' : local variable is initialized but not referenced
+     1>d:\课程\大四下\毕设\project\04. 3d+场景\head\info.h(31): warning C4189: 'wndWidth' : local variable is initialized but not referenced
+     1>d:\课程\大四下\毕设\project\04. 3d+场景\head\com_pc.h(96): warning C4189: 'dwBytesWrite' : local variable is initialized but not referenced
+     1>d:\课程\大四下\毕设\project\04. 3d+场景\head\com_pc.h(122): warning C4127: conditional expression is constant
+     1>d:\课程\大四下\毕设\project\04. 3d+场景\head\com_pc.h(197): warning C4127: conditional expression is constant
+     1>D:\Microsoft Visual Studio 10.0\VC\include\xlocale(323): warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify /EHsc
+     1>d:\课程\大四下\毕设\project\04. 3d+场景\head\com_pc.h(127): warning C4706: assignment within conditional expression
+       ResourceCompile:
+         All outputs are up-to-date.
+       Link:
+         D:\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"Release\3DprojectS.exe" /INCREMENTAL:NO /NOLOGO dxerr.lib dxguid.lib d3dx9.lib d3dx10.lib d3d9.lib winmm.lib comctl32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST:NO /DEBUG /PDB:"D:\课程\大四下\毕设\Project\04. 3D+场景\Release\3DprojectS.pdb" /SUBSYSTEM:WINDOWS /OPT:REF /OPT:ICF /TLBID:1 /DYNAMICBASE:NO /IMPLIB:"Release\3DprojectS.lib" /MACHINE:X86 Release\3DprojectS.res
+         Release\DXUT.obj
+         Release\DXUTcamera.obj
+         Release\DXUTenum.obj
+         Release\DXUTgui.obj
+         Release\DXUTmisc.obj
+         Release\DXUTres.obj
+         Release\DXUTsettingsdlg.obj
+         Release\SDKmisc.obj
+         Release\AllocateHierarchy.obj
+         Release\SkinMesh.obj
+         Release\3DprojectS.obj /IGNORE:4089 
+         3DprojectS_2008.vcxproj -> D:\课程\大四下\毕设\Project\04. 3D+场景\Release\3DprojectS.exe
+       FinalizeBuildStatus:
+         Deleting file "Release\3DprojectS.unsuccessfulbuild".
+         Touching "Release\3DprojectS.lastbuildstate".
+     1>Done Building Project "D:\课程\大四下\毕设\Project\04. 3D+场景\3DprojectS_2008.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:02.34

@@ -1,0 +1,79 @@
+#pragma once
+
+
+#include <windows.h>
+#include <commdlg.h>
+#include <xact3.h>
+#include <shellapi.h>
+#include <strsafe.h>
+#include <time.h>
+
+
+class AUDIO_STATE
+{
+public:
+	AUDIO_STATE();
+	~AUDIO_STATE(){};
+	int GetRand()const; //获得随机数
+	//因为种种原因只能封装成友元函数
+    friend HRESULT PrepareXACT();     //准备工作
+	friend void UpdateAudio();      //在主程序中调用，进行处理
+	friend VOID CleanupXACT();                 //清空工作
+	friend void WINAPI XACTNotificationCallback(const XACT_NOTIFICATION* pNotification);   //Notification 的回调函数
+	friend HRESULT FindMediaFileCch(WCHAR* strDestPath, int cchDest, LPCWSTR strFilename);    //从路径中提取文件名
+	friend bool DoesCommandLineContainAuditionSwitch();    //命令行参数的一个判别
+	//其他的控制函数
+	friend bool HandlePlaySound(int num, XACTTIME timeOffset=0);  //播放音效,参数为音效编号,0到MAX_SOUNDS_NUM-1, timeOffset为起始播放的位置，以毫秒计算
+	friend bool HandleSetBackMusicsVolume(float fVolume);  //设定背景音乐的声音大小，参数fVolume为音量大小
+	friend bool HandleSetSoundsVolume(float fVolume); //设定音效声音大小，参数fVolume为音量大小
+	friend bool HandleChangeVolume(UINT uMsg, WPARAM wParam, float fChange); //直接处理消息改变音量 
+	                                                                         //A S 控制音效的减增， Z X控制背景音乐的减增
+private:
+	//XACT Engine、Sound bank、等指针
+	IXACT3Engine* pEngine;
+	IXACT3SoundBank* pSoundBank;
+	IXACT3WaveBank* pInMemoryWaveBank; //存储场景音效
+	IXACT3WaveBank* pStreamingWaveBank; //存储背景音乐
+
+	//indexes of cue
+	XACTINDEX *iBackMusics;    //存储背阴音乐索引指针
+	XACTINDEX *iSounds;              //存储音效索引指针
+
+	//Category 用以控制音量
+	XACTCATEGORY iBackMusicsCategory;
+	XACTCATEGORY iSoundsCategory;
+
+	//XACTVARIABLEINDEX iRPMVariable;
+	
+	//音乐音量
+	float fBackMusicsVolume;
+	float fSoundsVolume;
+
+	//pointers to cue
+	IXACT3Cue* pBackMusic;     //指向当前背景音乐cue的指针
+	
+	//Handles to files
+	HANDLE hStreamingWaveBankFile;
+	VOID* pbInMemoryWaveBank;  //Handle to Wave bank data;
+	VOID* pbSoundBank;  //Handle to Sound Bank data;
+
+	//Critical_Section struct 用于线程间的共享
+	CRITICAL_SECTION cs;
+
+	//一些标志
+	bool bHandleStreamingWaveBankPrepared;  //标志StreamingWaveBank准备好
+	bool bHandleBackMusicStop;  //标志一首背景音乐以播放完
+	int nCurBackMusicPlaying;  //记录现在正在播放的背景音乐的标号
+
+	int MAX_BACKMUSICS_NUM;  //背景音乐的最大数
+	int MAX_SOUNDS_NUM;   // 音效的最大数
+
+	//文件路径
+	//WCHAR InMemoryWaveBankPath[MAX_PATH];   // InMemorg Wave bank文件
+	//WCHAR StreamingWaveBankPath[MAX_PATH];  //streaming Wave bank 文件
+	//WCHAR SoundBankPath[MAX_PATH];          // Sounds Bank 文件
+	//WCHAR GlobalSettingPath[MAX_PATH];    //控制文件
+	//short nNumOfBankMusicType;
+};
+
+extern AUDIO_STATE g_audioState;

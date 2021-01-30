@@ -1,0 +1,32 @@
+【house_tree.X】
+
+addSizeForXYZ = 50.0f;
+
+===================
+
+【小酒楼.X】——初始就在原点了
+
+changeSizeXYZ = 0.2;
+transformData.yRotation = 90;
+transformData.xMove = 2.0f;
+transformData.zMove = -1.0f;
+
+===================
+
+【Q版小院.X】
+
+changeSizeXYZ = 0.3;
+transformData.yRotation = -88;
+transformData.yMove = -0.4f;
+transformData.zMove = -16.0f;
+
+===================
+
+【皇城】
+
+
+
+===================
+
+【牌楼】
+

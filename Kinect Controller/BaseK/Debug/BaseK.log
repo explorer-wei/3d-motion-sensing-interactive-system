@@ -1,0 +1,23 @@
+﻿Build started 2012-04-06 AM 11:18:20.
+     1>Project "D:\课程\大四下\毕设\Project\03. BaseK\BaseK\BaseK.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Creating "Debug\BaseK.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         D:\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt ..\BaseK.cpp
+         BaseK.cpp
+     1>d:\课程\大四下\毕设\project\03. basek\basek.cpp(39): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\microsoft visual studio 10.0\vc\include\stdio.h(234) : see declaration of 'fopen'
+       Link:
+         D:\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\课程\大四下\毕设\Project\03. BaseK\Debug\BaseK.exe" /NOLOGO Kinect10.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\BaseK.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"D:\课程\大四下\毕设\Project\03. BaseK\Debug\BaseK.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\课程\大四下\毕设\Project\03. BaseK\Debug\BaseK.lib" /MACHINE:X86 Debug\BaseK.obj
+         LINK : D:\课程\大四下\毕设\Project\03. BaseK\Debug\BaseK.exe not found or not built by the last incremental link; performing full link
+         BaseK.vcxproj -> D:\课程\大四下\毕设\Project\03. BaseK\Debug\BaseK.exe
+       Manifest:
+         C:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"D:\课程\大四下\毕设\Project\03. BaseK\Debug\BaseK.exe;#1" /manifest Debug\BaseK.exe.intermediate.manifest
+       FinalizeBuildStatus:
+         Deleting file "Debug\BaseK.unsuccessfulbuild".
+         Touching "Debug\BaseK.lastbuildstate".
+     1>Done Building Project "D:\课程\大四下\毕设\Project\03. BaseK\BaseK\BaseK.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:01.87
